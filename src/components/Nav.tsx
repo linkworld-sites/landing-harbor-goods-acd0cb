@@ -4,37 +4,45 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const SECTIONS = [
-  { id: "index", label: "The Object Index", n: "01" },
-  { id: "craft", label: "Craft Rows", n: "02" },
-  { id: "ledger", label: "The Patina Ledger", n: "03" },
-  { id: "numbers", label: "In Numbers", n: "04" },
-  { id: "voice", label: "Client Voice", n: "05" },
-  { id: "heritage", label: "Heritage", n: "06" },
-  { id: "visit", label: "Visit / Order", n: "07" },
+  { id: "ledger", label: "Patina Ledger", n: "01" },
+  { id: "proof", label: "Spec Compliance", n: "02" },
+  { id: "numbers", label: "In Numbers", n: "03" },
+  { id: "process", label: "The Process", n: "04" },
+  { id: "order", label: "Order", n: "05" },
 ];
 
 export function Nav() {
   return (
     <>
       <div
-        className="fixed left-6 top-6 z-50 md:left-10 md:top-8"
+        className="fixed left-6 top-6 z-50 flex items-baseline gap-2 md:left-10 md:top-8"
         style={{ mixBlendMode: "difference" }}
       >
         <Link
           href="/"
-          className="font-display text-[15px] italic tracking-tight text-white"
+          className="font-mono text-[13px] font-medium uppercase tracking-[0.1em] text-white"
         >
           Harbor Goods
         </Link>
+        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/50">
+          Est. No. 004
+        </span>
       </div>
 
       <div
-        className="fixed right-6 top-6 z-50 md:right-10 md:top-8"
+        className="fixed right-6 top-6 z-50 flex items-center gap-6 md:right-10 md:top-8"
         style={{ mixBlendMode: "difference" }}
       >
         <Link
+          href="/shop"
+          className="group relative font-mono text-[11px] uppercase tracking-[0.22em] text-white/85"
+        >
+          Shop
+          <span className="absolute -bottom-1 left-0 h-px w-0 bg-white transition-all duration-200 group-hover:w-full" />
+        </Link>
+        <Link
           href="/blog"
-          className="group relative text-[11px] uppercase tracking-[0.22em] text-white/85"
+          className="group relative font-mono text-[11px] uppercase tracking-[0.22em] text-white/85"
         >
           Journal
           <span className="absolute -bottom-1 left-0 h-px w-0 bg-white transition-all duration-200 group-hover:w-full" />
@@ -56,8 +64,8 @@ export function Nav() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.03 }}
           >
-            <span className="text-[10px] tracking-widest2">{s.label}</span>
-            <span className="text-[10px] tabular-nums">{s.n}</span>
+            <span className="font-mono text-[10px] uppercase tracking-widest2">{s.label}</span>
+            <span className="font-mono text-[10px] tabular-nums">{s.n}</span>
           </motion.a>
         ))}
       </nav>

@@ -5,17 +5,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gallery: "#FAFAF7",
-        ink: "#1B1815",
-        saddle: "#8B5A3C",
-        brass: "#B8935F",
-        hairline: "#D9D5CC",
-        walnut: "#2B1B12",
-        void: "#0F0D0B",
+        paper: "#F4F1EA",
+        ink: "#14130F",
+        steel: "#4A4E52",
+        orange: "#D9531E",
+        blueprint: "#1E3A5F",
+        line: "#D6D2C6",
+        "line-dark": "rgba(244,241,234,0.16)",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-condensed)", "sans-serif"],
+        sans: ["var(--font-condensed)", "sans-serif"],
+        mono: ["var(--font-plex-mono)", "monospace"],
       },
       letterSpacing: {
         widest2: "0.22em",

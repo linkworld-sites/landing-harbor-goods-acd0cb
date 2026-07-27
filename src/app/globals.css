@@ -13,8 +13,13 @@ html.lenis body {
 
 html,
 body {
-  background-color: #fafaf7;
-  color: #1b1815;
+  background-color: #f4f1ea;
+  color: #14130f;
+}
+
+.tick-rail {
+  background-image: linear-gradient(to right, rgba(20, 19, 15, 0.18) 1px, transparent 1px);
+  background-size: 12.5% 100%;
 }
 
 .liquid-glass {
