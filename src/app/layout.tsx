@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Condensed, IBM_Plex_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { FunnelTracker } from "@/components/FunnelTracker";
 import { EditBridge } from "@/components/EditBridge";
@@ -7,17 +7,10 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const condensed = IBM_Plex_Sans_Condensed({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-condensed",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-plex-mono",
-  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -51,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: SITE_URL,
   };
   return (
-    <html lang="en" className={`${condensed.variable} ${plexMono.variable}`}>
+    <html lang="en" className={jetbrainsMono.variable}>
       <head>
         <script
           type="application/ld+json"
@@ -62,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
-      <body className="bg-paper font-sans text-ink antialiased">
+      <body className="bg-term font-mono text-fg antialiased">
         <FunnelTracker />
         <EditBridge />
         <SmoothScroll>{children}</SmoothScroll>

@@ -45,23 +45,23 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsBand() {
   return (
-    <section id="numbers" className="relative -mt-16 rounded-t-[2.5rem] bg-blueprint pb-24 pt-24 text-paper md:pt-28">
+    <section id="numbers" className="relative -mt-16 rounded-t-[2.5rem] bg-surface pb-24 pt-24 text-fg md:pt-28">
       <div className="mx-auto max-w-5xl px-6">
         <FadeUp className="mb-14 text-center">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/50">
-            Sec. 03 — In Numbers
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+            <span className="text-green">❯</span> stat --tolerances
           </p>
-          <p className="mx-auto mt-3 max-w-md font-display text-lg text-paper/85">
+          <p className="mx-auto mt-3 max-w-md font-display text-lg text-fg/85">
             Every figure below is a build tolerance, not a marketing round-up.
           </p>
         </FadeUp>
-        <div className="grid grid-cols-2 divide-y divide-line-dark md:grid-cols-4 md:divide-x md:divide-y-0">
+        <div className="grid grid-cols-2 divide-y divide-line md:grid-cols-4 md:divide-x md:divide-y-0">
           {STATS.map((s) => (
             <FadeUp key={s.label} className="flex flex-col items-center px-4 py-6 text-center">
-              <span className="text-[clamp(2.75rem,6vw,4.5rem)] font-light leading-none text-paper">
+              <span className="text-[clamp(2.75rem,6vw,4.5rem)] font-light leading-none text-white">
                 <CountUp value={s.value} suffix={s.suffix} />
               </span>
-              <span className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-paper/60">
+              <span className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
                 {s.label}
               </span>
             </FadeUp>

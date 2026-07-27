@@ -27,9 +27,9 @@ function Row({ items, direction }: { items: typeof SPECS; direction: "left" | "r
         {track.map((s, i) => (
           <div
             key={`${s.label}-${i}`}
-            className="liquid-glass flex h-16 w-40 shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-ink text-paper"
+            className="liquid-glass flex h-16 w-40 shrink-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-surface text-fg"
           >
-            <s.icon className="h-4 w-4" strokeWidth={1.5} />
+            <s.icon className="h-4 w-4 text-green" strokeWidth={1.5} />
             <span className="font-mono text-[10px] uppercase tracking-[0.14em]">{s.label}</span>
           </div>
         ))}
@@ -40,10 +40,10 @@ function Row({ items, direction }: { items: typeof SPECS; direction: "left" | "r
 
 export function MarqueeStrip() {
   return (
-    <section id="proof" className="relative bg-ink py-20 md:py-28">
+    <section id="proof" className="relative bg-term py-20 md:py-28">
       <FadeUp className="mx-auto mb-10 max-w-6xl px-6">
-        <p className="text-center font-mono text-[11px] uppercase tracking-[0.22em] text-paper/50">
-          Sec. 02 — Spec Compliance
+        <p className="text-center font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+          <span className="text-green">❯</span> ls --spec-compliance
         </p>
       </FadeUp>
       <div className="flex flex-col gap-4">

@@ -13,13 +13,13 @@ const STEPS = [
 export function ProcessSteps() {
   const reduced = useReducedMotion();
   return (
-    <section id="process" className="relative bg-paper py-24 md:py-32">
+    <section id="process" className="relative bg-term py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <FadeUp className="mb-16 md:mb-24">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/50">
-            Sec. 04 — The Process
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+            <span className="text-green">❯</span> run ./process.sh --verbose
           </p>
-          <p className="mt-3 max-w-lg font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold leading-[1.05] tracking-tight text-ink">
+          <p className="mt-3 max-w-lg font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold leading-[1.05] tracking-tight text-white">
             Four steps. No shortcuts.
           </p>
         </FadeUp>
@@ -32,7 +32,8 @@ export function ProcessSteps() {
                 y1="0"
                 x2="100%"
                 y2="0"
-                stroke="#D6D2C6"
+                stroke="#39ff9d"
+                strokeOpacity="0.3"
                 strokeWidth="1"
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
@@ -46,14 +47,14 @@ export function ProcessSteps() {
             {STEPS.map((s, i) => (
               <FadeUp key={s.n} delay={i * 0.08} className="relative">
                 <span
-                  className="pointer-events-none absolute -top-6 left-0 select-none font-display text-[6rem] font-bold leading-none text-ink/[0.08] md:text-[5rem]"
+                  className="pointer-events-none absolute -top-6 left-0 select-none font-display text-[6rem] font-bold leading-none text-white/[0.06] md:text-[5rem]"
                   aria-hidden
                 >
                   {s.n}
                 </span>
                 <div className="relative pt-16">
-                  <p className="font-display text-lg font-semibold text-ink">{s.title}</p>
-                  <p className="mt-2 font-mono text-[13px] leading-relaxed text-ink/60">{s.body}</p>
+                  <p className="font-display text-lg font-semibold text-white">{s.title}</p>
+                  <p className="mt-2 font-mono text-[13px] leading-relaxed text-muted">{s.body}</p>
                 </div>
               </FadeUp>
             ))}

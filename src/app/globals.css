@@ -13,13 +13,46 @@ html.lenis body {
 
 html,
 body {
-  background-color: #f4f1ea;
-  color: #14130f;
+  background-color: #0d1117;
+  color: #e6edf3;
 }
 
 .tick-rail {
   background-image: linear-gradient(to right, rgba(20, 19, 15, 0.18) 1px, transparent 1px);
   background-size: 12.5% 100%;
+}
+
+.tick-rail-dark {
+  background-image: linear-gradient(to right, rgba(230, 237, 243, 0.18) 1px, transparent 1px);
+  background-size: 12.5% 100%;
+}
+
+.scanlines {
+  position: relative;
+}
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .liquid-glass {
