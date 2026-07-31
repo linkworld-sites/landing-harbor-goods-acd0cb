@@ -32,7 +32,7 @@ export function ProcessSteps() {
                 y1="0"
                 x2="100%"
                 y2="0"
-                stroke="#39ff9d"
+                stroke="#39ff14"
                 strokeOpacity="0.3"
                 strokeWidth="1"
                 initial={{ pathLength: 0 }}
